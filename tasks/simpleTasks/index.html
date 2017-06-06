@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script>
+			
+		</script>
+	</head>
+	<body ng-app="myPracriceApp">
+		<h1>Решение задачек по Angular из интернета</h1>
+		<h2>Работа с переменными</h2>
+		<div ng-controller="myPracriceController">
+			<ol>
+				<li>
+					<h3>Задача:</h3>
+					<p>Даны 3 переменные: <strong>$scope.name</strong> со значением 'Иван', <strong>$scope.surname</strong> со значением 'Иванов' и <strong>$scope.age</strong> со значением 25. По заходу на страницу выведите каждую переменную в свой абзац.</p>
+					<h2>Решение:</h2>
+					<p>{{name}}</p>
+					<p>{{surname}}</p>
+					<p ng-bind="age"></p>
+				</li>
+				<li>
+					<hr>
+					<h3>Задача:</h3>
+					<p> <strong>Дан объект с юзером:</strong> <br><br>
+					<code>var langs = {<br>
+						name: 'Иван',<br>
+						surname: 'Иванов',<br>
+						age: '25',<br>
+					}</code><br><br>
+					Выведите данные из этого объекта как показано ниже: <br>
+					<img src="screenshot.png" alt="">
+					</p>
+					<h2>Решение:</h2>
+					<p>{{langs.surname}} {{langs.name}},   {{langs.age}}</p>
+				</li>
+			</ol>
+
+			<hr>
+			<hr>
+			<h2>Работа с массивами</h2>
+			<ol>
+				<li>
+					<h3>Задача:</h3>
+					<p>Дан массив языков ['html', 'css', 'js', 'php']. Выведите эти языки в виде списка <code>ul</code>.
+					</p>
+					<h3>Решение:</h3>
+					<ul>
+						<li ng-repeat="a in languages">{{a}}</li>
+					</ul>
+				</li>
+				<li>
+					<hr>
+					<h3>Задача:</h3>
+					<p>Дан массив городов и их стран: </p><br>
+					<code>var langs = {
+						Минск: 'Беларусь',
+						Москва: 'Россия',
+						Киев: 'Украина',
+					}</code><br>
+					<p>Выведите эти города в виде списка <code>ul</code> как показано ниже: <br>
+					<img src="screenshot1.png" alt="">
+					</p>
+					<h3>Решение</h3>
+					<ul>
+						<li ng-repeat="(city, count) in countries">{{count}}: '{{city}}'</li>
+					</ul>
+				</li>
+				<li>
+				<hr>
+					<h3>Задача:</h3>
+					<p>Дан массив работников:</p>
+					<code>var workers = [ <br>
+						{name: 'Коля', age: 30, salary: 400},<br>
+						{name: 'Вася', age: 31, salary: 500},<br>
+						{name: 'Петя', age: 32, salary: 600},<br>
+					];</code> 
+					<p>Выведите этих работников в виде списка <code>ul</code> как показано ниже: <br>
+					<img src="screenshot2.png" alt="">
+					</p>
+					<h3>Решение:</h3>
+					<ul>
+						<li ng-repeat="worker in workers">
+							Имя: {{worker.name}}, возраст: {{worker.age}}, зарплата: {{worker.salary}}
+						</li>
+					</ul>
+				</li>
+			</ol>
+
+			<hr>
+			<hr>
+			<h2>Работа с событиями</h2>
+			<ol>
+				<li>
+					<h3>Задача:</h3>
+					<p>Дана переменная $scope.name со значением 'Иван'. По заходу на страницу запишите эту переменную в абзац. Сделайте ссылку, по клику на которую 'Иван' поменяется на 'Дима'. </p>
+					<h3>Решение:</h3>
+					<p>
+						<button ng-click="changeName()">Поменяем имя</button>
+						<span>{{nameChange}}</span>
+					</p>
+				</li>
+			</ol>
+
+		</div>
+		<script src="js/main.js"></script>
+	</body>
+</html>

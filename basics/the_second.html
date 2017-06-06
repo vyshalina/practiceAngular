@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	
+</head>
+<body ng-app="app">
+<p ng-controller="MessageController as controller">
+  {{controller.message}}
+</p>
+	<script>
+		angular.module('app', []);
+		angular.module('app').config(['$controllerProvider', function($controllerProvider) {
+		  $controllerProvider.allowGlobals();
+		}]);
+		function MessageController() {
+  this.message = "This is a model.";
+}
+	</script>
+</body>
+</html>

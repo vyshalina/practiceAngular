@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app>
+
+
+<input type='checkbox' ng-init='checkMe = "hi"' ng-true-value='"Дароу"' ng-false-value='"Пока"'ng-model='checkMe'>
+is bound to
+<strong ng-bind="checkMe"></strong>.
+
+<input type='checkbox' ng-init='feeling = "love it"' ng-model='feeling'
+    ng-true-value='"love it"' ng-false-value='"hate it"'>
+is bound to
+"<strong ng-bind="feeling"></strong>".
+Change it!
+<br>
+<select ng-model='answer'>
+  <option value='yes' selected>Yes</option>
+  <option value='no'>No</option>
+  <option value='maybe'>Maybe</option>
+</select>
+is bound to
+"<strong ng-bind="answer"></strong>".
+Change it!
+
+<div class="clearfix"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</body>
+</html>

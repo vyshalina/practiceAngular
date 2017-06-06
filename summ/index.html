@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Add numbers</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-app="AddNumbersApp">
+	<div>
+		<h1>Складываем числа с Angular</h1>
+		<p>Введите числа, сумму, которых хотите узнать: <input type="text" ng-model="a"> <input type="text" ng-model="b"></p>
+
+		<h2>Выводим при помощи фигурных скобок "{ { } }":</h2>
+		<p>{{+a + +b}}</p>
+
+		<h2>Выводим при помощи директивы "ng-bind":</h2>
+		<p ng-bind="+a + +b"></p>
+	</div>
+	
+	
+    <div ng-controller="AddNumbersController">
+    <h2>Выводим сумму из контроллера</h2>
+        <p><span>{{summ}}</span></p>
+
+    <h2>Выводим сумму input</h2>
+	<input ng-model="c" type="text" ng-keyup="AddNumbers()"> 
+	<input ng-model="d" type="text" ng-keyup="AddNumbers()">
+	<p ng-bind="summ2"></p>
+    </div>
+	<!--Controllers Ang-->
+	<script src="js/main.js"></script>
+</body>
+</html>

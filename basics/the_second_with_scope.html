@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Практикуем работу со scope</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	
+</head>
+<body ng-app="app">
+<p ng-controller="MessageController">
+  {{message}}
+</p>
+
+<p ng-controller="CountController">
+  There are {{count()}} months in a year.
+</p>
+
+<p ng-controller="AdditionController">
+  <select ng-model="operand1" ng-options="x for x in options"></select>
+  + <select ng-model="operand2" ng-options="x for x in options"></select>
+  = {{add()}}
+</p>
+
+<p ng-controller="AdditionContr">
+  {{add(number, 2)}} is not the same as {{add(number, "2")}}
+  <br>
+  2 + 2 + 2 + 2 = {{add(2, add(2, add(2, 2)))}}
+</p>
+	<script>
+		angular.module('app', []);
+		angular.module('app').config(['$controllerProvider', function($controllerProvider) {
+		  $controllerProvider.allowGlobals();
+		}]);
+		//Для первоц строчки
+		function MessageController($scope) {
+		  $scope.message = "This is a model.";
+		}
+		//Для второй
+		function CountController($scope) {
+		  $scope.count = function() { return 12; }
+		}
+		//Для 3-ей
+		function AdditionController($scope) {
+		  $scope.operand1 = 0;
+		  $scope.operand2 = 0;
+		  $scope.add = function() {
+		    return $scope.operand1 + $scope.operand2;
+		  }
+		  $scope.options = [0,1,2,3,4];
+		}
+
+		//Для 4-ой
+		function AdditionContr($scope) {
+		  $scope.number = 2;
+		  $scope.add = function(operand1, operand2) {
+		    return operand1 + operand2;
+		  }
+		}
+
+	</script>
+</body>
+</html>

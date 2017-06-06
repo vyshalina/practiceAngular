@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script>
+			
+		</script>
+	</head>
+	<body ng-controller="MyController" >
+		<ul>
+			<li ng-repeat="(name, age) in item">Имя: {{name}}, Возраст: {{age}}</li>
+		</ul>
+		<select name="prices" id="">
+			<option ng-init="prices"  ng-repeat="(i, h) in item">{{i}}</option>
+		</select>
+		<script src="js/main.js"></script>
+	</body>
+</html>

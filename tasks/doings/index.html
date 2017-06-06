@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script>
+			
+		</script>
+	</head>
+	<body ng-controller="MyController">
+		<h1>Работа с событиями</h1>
+		<button ng-click="showMe()">Нажми</button><br><br>
+		<button ng-click="showMessege()">Показать сообщение</button>
+		<p>{{message}}</p>
+		<h2>Меняем текст</h2>
+		<button ng-click="messCh()">клик</button><br>
+		<p>{{mess}}</p>
+		<script src="js/main.js"></script>
+	</body>
+</html>
